@@ -1,0 +1,935 @@
+<!DOCTYPE html><html><head>
+      <title>PSYC1023</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////Users/haoren/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.6.1/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h2 class="mume-header" id="book-summary">Book Summary</h2>
+
+<ul>
+<li><a href="#book-summary">Book Summary</a>
+<ul>
+<li><a href="#chapter-1-abnormal-behavior-in-historical-context">Chapter 1: Abnormal Behavior in Historical Context</a>
+<ul>
+<li><a href="#11-understanding-psychopathology">1.1 Understanding Psychopathology</a>
+<ul>
+<li><a href="#q-111-how-do-psychologists-define-a-psychological-disorder">Q 1.1.1 How do psychologists define a psychological disorder?</a></li>
+<li><a href="#q-112-what-is-a-scientist-practitioner">Q 1.1.2 What is a scientist-practitioner?</a></li>
+</ul>
+</li>
+<li><a href="#12-the-supernatural-biological-and-psychological-traditions">1.2 The Supernatural, Biological, and Psychological Traditions</a>
+<ul>
+<li><a href="#q-121-what-supernatural-influences-were-formerly-believed-to-explain-abnormal-behavior">Q 1.2.1 What supernatural influences were formerly believed to explain abnormal behavior?</a></li>
+<li><a href="#q-122-what-are-the-underlying-assumptions-of-the-biological-approach-to-understanding-abnormal-behavior">Q 1.2.2 What are the underlying assumptions of the biological approach to understanding abnormal behavior?</a></li>
+<li><a href="#q-123-how-do-the-psychological-approaches-of-psychoanalysis-humanism-and-behaviorism-explain-abnormal-behavior">Q 1.2.3 How do the psychological approaches of psychoanalysis, humanism, and behaviorism explain abnormal behavior?</a></li>
+</ul>
+</li>
+<li><a href="#13-an-integrative-approach">1.3 An Integrative Approach</a>
+<ul>
+<li><a href="#q-131-why-is-the-scientific-method-so-important-in-studying-abnormal-behavior">Q 1.3.1 Why is the scientific method so important in studying abnormal behavior?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#chapter-2-clinical-assessment-diagnosis-and-research-in-psychopathology">Chapter 2: Clinical Assessment, Diagnosis, and Research in Psychopathology</a>
+<ul>
+<li><a href="#21-assessing-psychological-disorders">2.1 Assessing Psychological Disorders</a>
+<ul>
+<li><a href="#q-211-what-are-clinical-assessment-and-diagnosis">Q 2.1.1 What are clinical assessment and diagnosis?</a></li>
+<li><a href="#q-212-what-are-the-main-methods-used-in-clinical-assessment">Q 2.1.2 What are the main methods used in clinical assessment?</a></li>
+</ul>
+</li>
+<li><a href="#22-diagnosing-psychological-disorders">2.2 Diagnosing Psychological Disorders</a>
+<ul>
+<li><a href="#q-221-how-is-psychiatric-diagnosis-carried-out">Q 2.2.1 How is psychiatric diagnosis carried out?</a></li>
+</ul>
+</li>
+<li><a href="#23-conducting-research-in-psychopathology">2.3 Conducting Research in Psychopathology</a>
+<ul>
+<li><a href="#q-231-what-are-the-basic-components-of-research-in-psychopathology">Q 2.3.1 What are the basic components of research in psychopathology?</a></li>
+</ul>
+</li>
+<li><a href="#24-types-of-research-methods">2.4 Types of Research Methods</a>
+<ul>
+<li><a href="#q-241-what-methods-are-used-to-conduct-research-on-the-causes-of-behavior">Q 2.4.1 What methods are used to conduct research on the causes of behavior?</a></li>
+</ul>
+</li>
+<li><a href="#25-genetics-and-behavior-across-time-and-cultures">2.5 Genetics and Behavior across Time and Cultures</a>
+<ul>
+<li><a href="#q-251-how-do-researchers-study-the-interaction-between-environment-and-genetics">Q 2.5.1 How do researchers study the interaction between environment and genetics?</a></li>
+<li><a href="#q-252-why-do-researchers-study-behavior-over-time-and-across-cultures">Q 2.5.2 Why do researchers study behavior over time and across cultures?</a></li>
+</ul>
+</li>
+<li><a href="#26-research-ethics">2.6 Research Ethics</a>
+<ul>
+<li><a href="#q-261-why-are-ethical-principles-so-important-in-the-research-process">Q 2.6.1 Why are ethical principles so important in the research process?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#chapter-3-an-integrative-approach-to-psychopathology">Chapter 3: An Integrative Approach to Psychopathology</a>
+<ul>
+<li><a href="#31-one-dimensional-versus-multidimensional-models">3.1 One-Dimensional versus Multidimensional Models</a>
+<ul>
+<li><a href="#q-311-how-does-a-multidimensional-model-of-causality-differ-from-a-unidimensional-model">Q 3.1.1 How does a multidimensional model of causality differ from a unidimensional model?</a></li>
+<li><a href="#q-312-what-are-the-key-influences-comprising-the-multidimensional-model-of-abnormal-behavior">Q 3.1.2 What are the key influences comprising the multidimensional model of abnormal behavior?</a></li>
+</ul>
+</li>
+<li><a href="#32-genetic-contributions-to-psychopathology">3.2 Genetic Contributions to Psychopathology</a>
+<ul>
+<li><a href="#q-321-how-do-genes-interact-with-environmental-factors-to-affect-behavior">Q 3.2.1 How do genes interact with environmental factors to affect behavior?</a></li>
+<li><a href="#q-322-what-kinds-of-models-have-been-proposed-to-describe-this-interaction">Q 3.2.2 What kinds of models have been proposed to describe this interaction?</a></li>
+</ul>
+</li>
+<li><a href="#33-neuroscience-and-its-contributions-to-psychopathology">3.3 Neuroscience and Its Contributions to Psychopathology</a>
+<ul>
+<li><a href="#q-331-what-are-neurotransmitters-and-how-are-they-involved-in-abnormal-behavior">Q 3.3.1 What are neurotransmitters, and how are they involved in abnormal behavior?</a></li>
+<li><a href="#q-332-what-are-the-functions-of-different-brain-regions-and-what-are-their-roles-in-psychopathology">Q 3.3.2 What are the functions of different brain regions, and what are their roles in psychopathology?</a></li>
+</ul>
+</li>
+<li><a href="#34-behavioral-and-cognitive-science">3.4 Behavioral and Cognitive Science</a>
+<ul>
+<li><a href="#q-341-what-are-the-key-differences-between-behavioral-and-cognitive-explanations-of-the-origins-of-mental-illness">Q 3.4.1 What are the key differences between behavioral and cognitive explanations of the origins of mental illness?</a></li>
+</ul>
+</li>
+<li><a href="#35-emotions">3.5 Emotions</a>
+<ul>
+<li><a href="#q-351-what-role-do-emotions-play-in-psychopathology">Q 3.5.1 What role do emotions play in psychopathology?</a></li>
+</ul>
+</li>
+<li><a href="#36-cultural-social-and-interpersonal-factors">3.6 Cultural, Social, and Interpersonal Factors</a>
+<ul>
+<li><a href="#q-361-how-do-cultural-social-and-interpersonal-factors-influence-abnormal-behavior">Q 3.6.1 How do cultural, social, and interpersonal factors influence abnormal behavior?</a></li>
+</ul>
+</li>
+<li><a href="#37-life-span-development">3.7 Life-Span Development</a>
+<ul>
+<li><a href="#q-371-why-should-psychological-disorders-be-considered-from-a-life-span-developmental-perspective">Q 3.7.1 Why should psychological disorders be considered from a life-span developmental perspective?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#chapter-10-mood-disorders-and-suicide">Chapter 10: Mood Disorders and Suicide</a>
+<ul>
+<li><a href="#101-understanding-and-defining-mood-disorders">10.1 Understanding and Defining Mood Disorders</a>
+<ul>
+<li><a href="#q-1011-what-is-the-difference-between-a-depressive-episode-and-a-manic-or-hypermanic-episode">Q 10.1.1 What is the difference between a depressive episode and a manic or hypermanic episode?</a></li>
+<li><a href="#q-1012-what-are-the-clinical-symptoms-of-major-depressive-disorder-persistent-depressive-disorder-and-bipolar-disorder">Q 10.1.2 What are the clinical symptoms of major depressive disorder, persistent depressive disorder, and bipolar disorder?</a></li>
+</ul>
+</li>
+<li><a href="#102-prevalence-of-mood-disorders">10.2 Prevalence of Mood Disorders</a>
+<ul>
+<li><a href="#q-1021-how-does-the-prevalence-of-mood-disorders-vary-across-a-life-span">Q 10.2.1 How does the prevalence of mood disorders vary across a life span?</a></li>
+</ul>
+</li>
+<li><a href="#103-causes-of-mood-disorders">10.3 Causes of Mood Disorders</a>
+<ul>
+<li><a href="#q-1031-what-biological-psychological-and-sociocultural-factors-contribute-to-the-development-of-mood-disorders">Q 10.3.1 What biological, psychological, and sociocultural factors contribute to the development of mood disorders?</a></li>
+</ul>
+</li>
+<li><a href="#104-treatment-of-mood-disorders">10.4 Treatment of Mood Disorders</a>
+<ul>
+<li><a href="#q-1041-what-medical-and-psychological-treatments-have-been-successful-in-treating-mood-disorders">Q 10.4.1 What medical and psychological treatments have been successful in treating mood disorders?</a></li>
+</ul>
+</li>
+<li><a href="#105-suicide">10.5 Suicide</a>
+<ul>
+<li><a href="#q-1051-what-is-the-relationship-between-suicide-and-mood-disorders">Q 10.5.1 What is the relationship between suicide and mood disorders?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#chapter-11-anxiety-trauma-and-stressor-related-and-obsessive-compulsive-and-related-disorders">Chapter 11: Anxiety, Trauma-and Stressor-Related, and Obsessive-Compulsive and Related Disorders</a>
+<ul>
+<li><a href="#111-the-complexity-of-anxiety-disorders">11.1 The Complexity of Anxiety Disorders</a>
+<ul>
+<li><a href="#q-1111-what-are-the-similarities-and-differences-among-anxiety-fear-and-panic-attacks">Q 11.1.1 What are the similarities and differences among anxiety, fear, and panic attacks?</a></li>
+</ul>
+</li>
+<li><a href="#anxiety-disorders">ANXIETY DISORDERS</a></li>
+<li><a href="#112-generalized-anxiety-disorder">11.2 Generalized Anxiety Disorder</a>
+<ul>
+<li><a href="#q-1121-what-are-the-essential-features-possible-causes-and-available-treatment-approaches-for-generalized-anxiety-disorder">Q 11.2.1 What are the essential features, possible causes, and available treatment approaches for generalized anxiety disorder?</a></li>
+</ul>
+</li>
+<li><a href="#113-panic-disorder-and-agoraphobia">11.3 Panic Disorder and Agoraphobia</a>
+<ul>
+<li><a href="#q-1131-what-are-the-essential-features-of-panic-disorder-and-agoraphobia">Q 11.3.1 What are the essential features of panic disorder and agoraphobia?</a></li>
+</ul>
+</li>
+<li><a href="#114-specific-phobia">11.4 Specific Phobia</a>
+<ul>
+<li><a href="#q-1141-what-are-the-principal-causes-of-specific-phobia">Q 11.4.1 What are the principal causes of specific phobia?</a></li>
+<li><a href="#q-1142-what-strategies-are-typically-used-to-treat-specific-phobia">Q 11.4.2 What strategies are typically used to treat specific phobia?</a></li>
+</ul>
+</li>
+<li><a href="#115-social-anxiety-disorder-social-phobia">11.5 Social Anxiety Disorder (Social Phobia)</a>
+<ul>
+<li><a href="#q-1151-what-are-the-principal-causes-of-social-anxiety-disorder-social-phobia">Q 11.5.1 What are the principal causes of social anxiety disorder (social phobia)?</a></li>
+<li><a href="#q-1152-what-strategies-are-used-to-treat-social-anxiety-disorder-social-phobia">Q 11.5.2 What strategies are used to treat social anxiety disorder (social phobia)?</a></li>
+</ul>
+</li>
+<li><a href="#trauma-and-stressor-related-disorders">TRAUMA-AND STRESSOR-RELATED DISORDERS</a></li>
+<li><a href="#116-posttraumatic-stress-disorder">11.6 Posttraumatic Stress Disorder</a>
+<ul>
+<li><a href="#q-1161-what-are-the-essential-features-and-possible-causes-of-posttraumatic-stress-disorder">Q 11.6.1 What are the essential features and possible causes of posttraumatic stress disorder?</a></li>
+<li><a href="#q-1162-what-treatment-approaches-are-available-for-posttraumatic-stress-disorder">Q 11.6.2 What treatment approaches are available for posttraumatic stress disorder?</a></li>
+</ul>
+</li>
+<li><a href="#117-other-trauma-and-stressor-related-disorders">11.7 Other Trauma-and Stressor-Related Disorders</a>
+<ul>
+<li><a href="#q-1171-what-are-the-origins-of-other-trauma-and-stress-related-disorders">Q 11.7.1 What are the origins of other trauma-and stress-related disorders?</a></li>
+</ul>
+</li>
+<li><a href="#obsessive-compulsive-and-related-disorders">OBSESSIVE-COMPULSIVE AND RELATED DISORDERS</a></li>
+<li><a href="#118-obsessive-compulsive-disorder">11.8 Obsessive-Compulsive Disorder</a>
+<ul>
+<li><a href="#q-1181-what-are-the-symptoms-of-obsessive-compulsive-disorder">Q 11.8.1 What are the symptoms of obsessive-compulsive disorder?</a></li>
+<li><a href="#q-1182-how-is-obsessive-compulsive-disorder-treated">Q 11.8.2 How is obsessive-compulsive disorder treated?</a></li>
+</ul>
+</li>
+<li><a href="#119-body-dysmorphic-disorder">11.9 Body Dysmorphic Disorder</a>
+<ul>
+<li><a href="#q-1191-what-are-the-features-of-body-dysmorphic-disorder-and-how-is-it-treated">Q 11.9.1 What are the features of body dysmorphic disorder and how is it treated?</a></li>
+</ul>
+</li>
+<li><a href="#1110-other-obsessive-compulsive-and-related-disorders">11.10 Other Obsessive-Compulsive and Related Disorders</a>
+<ul>
+<li><a href="#q-11101-what-are-the-other-obsessive-compulsive-and-related-disorders-and-how-are-they-treated">Q 11.10.1 What are the other obsessive-compulsive and related disorders and how are they treated?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#chapter-12-substance-related-addictive-and-impulse-control-disorders">Chapter 12: Substance-Related, Addictive, and Impulse-Control Disorders</a>
+<ul>
+<li><a href="#121-perspectives-on-substance-related-and-addictive-disorders">12.1 Perspectives on Substance-Related and Addictive Disorders</a>
+<ul>
+<li><a href="#q-1211-what-are-substance-related-and-addictive-disorders">Q 12.1.1 What are substance-related and addictive disorders?</a></li>
+</ul>
+</li>
+<li><a href="#122-depressants-stimulants-and-opioids">12.2 Depressants, Stimulants, and Opioids</a>
+<ul>
+<li><a href="#q-1221-what-are-the-physiological-and-psychological-effects-of-depressants">Q 12.2.1 What are the physiological and psychological effects of depressants?</a></li>
+<li><a href="#q-1222-what-are-the-physiological-and-psychological-effects-of-stimulants">Q 12.2.2 What are the physiological and psychological effects of stimulants?</a></li>
+<li><a href="#q-1223-what-are-the-physiological-and-psychological-effects-of-opiates">Q 12.2.3 What are the physiological and psychological effects of opiates</a></li>
+</ul>
+</li>
+<li><a href="#123-cannabis-related-disorders">12.3 Cannabis-Related Disorders</a>
+<ul>
+<li><a href="#q-1231-what-are-the-physiological-and-psychological-effects-of-cannabis">Q 12.3.1 What are the physiological and psychological effects of cannabis?</a></li>
+</ul>
+</li>
+<li><a href="#124-hallucinogen-related-disorders">12.4 Hallucinogen-Related Disorders</a>
+<ul>
+<li><a href="#q-1241-what-are-the-physiological-and-psychological-effects-of-hallucinogenics">Q 12.4.1 What are the physiological and psychological effects of hallucinogenics?</a></li>
+</ul>
+</li>
+<li><a href="#125-other-drugs-of-abuse">12.5 Other Drugs of Abuse</a>
+<ul>
+<li><a href="#q-1251-what-are-the-physiological-and-psychological-effects-of-other-drugs-including-inhalants-steroids-and-designer-drugs">Q 12.5.1 What are the physiological and psychological effects of other drugs, including inhalants, steroids, and designer drugs?</a></li>
+</ul>
+</li>
+<li><a href="#126-causes-and-treatment-of-substance-related-disorders">12.6 Causes and Treatment of Substance-Related Disorders</a>
+<ul>
+<li><a href="#q-1261-what-physiological-and-psychological-processes-lead-to-substance-dependence">Q 12.6.1 What physiological and psychological processes lead to substance dependence?</a></li>
+<li><a href="#q-1262-what-psychological-and-medical-treatments-are-available-for-substance-related-disorders">Q 12.6.2 What psychological and medical treatments are available for substance-related disorders?</a></li>
+</ul>
+</li>
+<li><a href="#127-gambling-disorder">12.7 Gambling Disorder</a>
+<ul>
+<li><a href="#q-1271-what-psychological-and-physiological-processes-lead-to-gambling-disorder">Q 12.7.1 What psychological and physiological processes lead to gambling disorder?</a></li>
+</ul>
+</li>
+<li><a href="#128-impulse-control-disorders">12.8 Impulse-Control Disorders</a>
+<ul>
+<li><a href="#q-1281-what-conditions-are-listed-in-dsm-5-as-impulse-control-disorders">Q 12.8.1 What conditions are listed in DSM-5 as impulse-control disorders?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 class="mume-header" id="chapter-1-abnormal-behavior-in-historical-context">Chapter 1: Abnormal Behavior in Historical Context</h3>
+
+<h4 class="mume-header" id="11-understanding-psychopathology">1.1 Understanding Psychopathology</h4>
+
+<h5 class="mume-header" id="q-111-how-do-psychologists-define-a-psychological-disorder">Q 1.1.1 How do psychologists define a psychological disorder?</h5>
+
+<ul>
+<li>A psychological disorder is (1) a psychological dysfunction that is (2) associated with distress or impairment in functioning and (3) a response that is not typical or culturally expected. All three basic criteria must be met; no one criterion alone has yet been identified that defines the essence of abnormality.</li>
+<li>Psychopathology is concerned with the scientific study of psychological disorders. Mental health professionals range from clinical and counseling psychologists to psychiatrists and psychiatric social workers and nurses. Each profession requires a specific type of training.</li>
+</ul>
+<h5 class="mume-header" id="q-112-what-is-a-scientist-practitioner">Q 1.1.2 What is a scientist-practitioner?</h5>
+
+<ul>
+<li>Mental health professionals can function as scientist-practitioners. They not only keep up with the latest findings but also use scientific data to evaluate their own work, and they often conduct research within their clinics or hospitals.</li>
+<li>Research about psychological disorders falls into three categories: description, causation, and treatment and outcomes.</li>
+</ul>
+<h4 class="mume-header" id="12-the-supernatural-biological-and-psychological-traditions">1.2 The Supernatural, Biological, and Psychological Traditions</h4>
+
+<h5 class="mume-header" id="q-121-what-supernatural-influences-were-formerly-believed-to-explain-abnormal-behavior">Q 1.2.1 What supernatural influences were formerly believed to explain abnormal behavior?</h5>
+
+<h5 class="mume-header" id="q-122-what-are-the-underlying-assumptions-of-the-biological-approach-to-understanding-abnormal-behavior">Q 1.2.2 What are the underlying assumptions of the biological approach to understanding abnormal behavior?</h5>
+
+<h5 class="mume-header" id="q-123-how-do-the-psychological-approaches-of-psychoanalysis-humanism-and-behaviorism-explain-abnormal-behavior">Q 1.2.3 How do the psychological approaches of psychoanalysis, humanism, and behaviorism explain abnormal behavior?</h5>
+
+<ul>
+<li>Historically, there have been three approaches to abnormal behavior. In the supernatural tradition, abnormal behavior is attributed to outside agents, such as demons or spirits. In the biological tradition, disorders are attributed to disease or biochemical imbalances; in the psychological tradition, abnormal behavior is attributed to faulty psychological development and to social context.</li>
+<li>Each tradition has its own ways of treating individuals. Supernatural treatments include exorcism to rid the body of the supernatural spirits. Biological treatments emphasize physical care and medical cures, especially drugs. Psychological approaches use psychosocial treatments, beginning with moral therapy and including modern psychotherapy.</li>
+<li>Sigmund Freud, the founder of psychoanalytic therapy, offered an elaborate conception of the unconscious mind. In therapy, Freud focused on tapping into the unconscious through such techniques as catharsis, free association, and dream analysis. Although Freud&#x2019;s followers veered from his path in many ways, Freud&#x2019;s influence can still be felt today.</li>
+<li>One outgrowth of Freudian therapy is humanistic psychology, which focuses on human potential and self-actualizing. Therapy that has evolved from this approach is known as person-centered therapy; the therapist shows almost unconditional positive regard for the client&#x2019;s feelings and thoughts.</li>
+<li>The behavioral model moved psychology into the realm of science. Both research and therapy focus on things that are measurable, including such techniques as systematic desensitization, reinforcement, and shaping.</li>
+</ul>
+<h4 class="mume-header" id="13-an-integrative-approach">1.3 An Integrative Approach</h4>
+
+<h5 class="mume-header" id="q-131-why-is-the-scientific-method-so-important-in-studying-abnormal-behavior">Q 1.3.1 Why is the scientific method so important in studying abnormal behavior?</h5>
+
+<ul>
+<li>With the increasing sophistication of our scientific tools, and new knowledge from cognitive science, behavioral science, and neuroscience, we now realize that no contribution to psychological disorders occurs in isolation. Our behavior, both normal and abnormal, is a product of a continual interaction of psychological, biological, and social influences.</li>
+</ul>
+<p><a href="#book-summary">[BACK TO TOP]</a></p>
+<h3 class="mume-header" id="chapter-2-clinical-assessment-diagnosis-and-research-in-psychopathology">Chapter 2: Clinical Assessment, Diagnosis, and Research in Psychopathology</h3>
+
+<h4 class="mume-header" id="21-assessing-psychological-disorders">2.1 Assessing Psychological Disorders</h4>
+
+<h5 class="mume-header" id="q-211-what-are-clinical-assessment-and-diagnosis">Q 2.1.1 What are clinical assessment and diagnosis?</h5>
+
+<ul>
+<li>Clinical assessment is the systematic evaluation and measurement of psychological, biological, and social factors in an individual with a possible psychological disorder; diagnosis is the process of determining that those factors meet all criteria for a specific psychological disorder.</li>
+<li>Reliability, validity, and standardization are important components in determining the value of a psychological assessment.</li>
+</ul>
+<h5 class="mume-header" id="q-212-what-are-the-main-methods-used-in-clinical-assessment">Q 2.1.2 What are the main methods used in clinical assessment?</h5>
+
+<ul>
+<li>To assess various aspects of psychological disorders, clinicians may first interview and take an informal mental status exam of the patient. More systematic observations of behavior are called behavioral assessments.</li>
+<li>A variety of psychological tests can be used during the assessment, including projective tests, in which the patient responds to ambiguous stimuli by projecting unconscious thoughts; personality inventories, in which the patient takes a self-report questionnaire designed to assess personal traits; and intelligence testing, which provides a score known as an intelligence quotient (IQ).</li>
+<li>Biological aspects of psychological disorders may be assessed through neuropsychological testing designed to identify possible areas of brain dysfunction. Neuroimaging can be used more directly to identify brain structure and function. Finally, psychophysiological assessment refers to measurable changes in the nervous system, reflecting emotional or psychological events that might be relevant to a psychological disorder.</li>
+</ul>
+<h4 class="mume-header" id="22-diagnosing-psychological-disorders">2.2 Diagnosing Psychological Disorders</h4>
+
+<h5 class="mume-header" id="q-221-how-is-psychiatric-diagnosis-carried-out">Q 2.2.1 How is psychiatric diagnosis carried out?</h5>
+
+<ul>
+<li>The term classification refers to any effort to construct groups or categories and to assign objects or people to the categories on the basis of their shared attributes or relations. Methods of classification include classical categorical, dimensional, and prototypical approaches. Our current system of classification, the Diagnostic and Statistical Manual, fifth edition (DSM-5), is based on a prototypical approach in which certain essential characteristics are identified but certain &#x201C;non-essential&#x201D; variations do not necessarily change the classification.<br>
+The DSM-5 categories are based on empirical findings to identify the criteria for each diagnosis. Although this system is the best to date in terms of scientific underpinnings, it is far from perfect, and research continues on the most useful way to classify psychological disorders.</li>
+</ul>
+<h4 class="mume-header" id="23-conducting-research-in-psychopathology">2.3 Conducting Research in Psychopathology</h4>
+
+<h5 class="mume-header" id="q-231-what-are-the-basic-components-of-research-in-psychopathology">Q 2.3.1 What are the basic components of research in psychopathology?</h5>
+
+<ul>
+<li>Research involves establishing a hypothesis that is then tested. In abnormal psychology, research focuses on hypotheses meant to explain the nature, the causes, or the treatment of a disorder.</li>
+</ul>
+<h4 class="mume-header" id="24-types-of-research-methods">2.4 Types of Research Methods</h4>
+
+<h5 class="mume-header" id="q-241-what-methods-are-used-to-conduct-research-on-the-causes-of-behavior">Q 2.4.1 What methods are used to conduct research on the causes of behavior?</h5>
+
+<ul>
+<li>The individual case study is used to study one or more individuals in depth. Although case studies have an important role in the theoretical development of psychology, they are not subject to experimental control and must necessarily be suspect in terms of both internal and external validity.</li>
+<li>Research by correlation can tell us whether a relationship exists between two variables, but it does not tell us if that relationship is a causal one. Epidemiological research is a type of correlational research that reveals the incidence, distribution, and consequences of a particular problem in one or more populations.</li>
+<li>Research by experiment can follow one of two designs: group or single case. In both designs, a variable (or variables) is manipulated and the effects are observed to determine the nature of a causal relationship.</li>
+</ul>
+<h4 class="mume-header" id="25-genetics-and-behavior-across-time-and-cultures">2.5 Genetics and Behavior across Time and Cultures</h4>
+
+<h5 class="mume-header" id="q-251-how-do-researchers-study-the-interaction-between-environment-and-genetics">Q 2.5.1 How do researchers study the interaction between environment and genetics?</h5>
+
+<ul>
+<li>Genetic research focuses on the role of genetics in behavior. These research strategies include family studies, adoption studies, twin studies, genetic linkage analyses, and association studies.</li>
+</ul>
+<h5 class="mume-header" id="q-252-why-do-researchers-study-behavior-over-time-and-across-cultures">Q 2.5.2 Why do researchers study behavior over time and across cultures?</h5>
+
+<ul>
+<li>Research strategies that examine psychopathology across time include cross-sectional and longitudinal designs. Both focus on differences in behavior or attitudes at different ages, but the former does so by looking at different individuals at different ages and the latter looks at the same individuals at different ages.</li>
+<li>Prevention research can be viewed in four broad categories: health promotion or positive development strategies, universal prevention strategies, selective prevention strategies, and indicated prevention strategies.</li>
+<li>The clinical picture, causal factors, and treatment process and outcome can all be influenced by cultural factors.</li>
+<li>The more the findings of a research program are replicated, the more they gain in credibility.</li>
+</ul>
+<h4 class="mume-header" id="26-research-ethics">2.6 Research Ethics</h4>
+
+<h5 class="mume-header" id="q-261-why-are-ethical-principles-so-important-in-the-research-process">Q 2.6.1 Why are ethical principles so important in the research process?</h5>
+
+<ul>
+<li>Ethics are important to the research process, and ethical guidelines are spelled out by many professional organizations in an effort to ensure the well-being of research participants.</li>
+<li>Ethical concerns are being addressed through informed consent and through the inclusion of consumers in research design, implementation, and interpretation.</li>
+</ul>
+<p><a href="#book-summary">[BACK TO TOP]</a></p>
+<h3 class="mume-header" id="chapter-3-an-integrative-approach-to-psychopathology">Chapter 3: An Integrative Approach to Psychopathology</h3>
+
+<h4 class="mume-header" id="31-one-dimensional-versus-multidimensional-models">3.1 One-Dimensional versus Multidimensional Models</h4>
+
+<h5 class="mume-header" id="q-311-how-does-a-multidimensional-model-of-causality-differ-from-a-unidimensional-model">Q 3.1.1 How does a multidimensional model of causality differ from a unidimensional model?</h5>
+
+<ul>
+<li>The causes of abnormal behavior are complex and fascinating. Psychological disorders are caused by a complex interplay of nature (biology) and nurture (psychosocial factors).</li>
+</ul>
+<h5 class="mume-header" id="q-312-what-are-the-key-influences-comprising-the-multidimensional-model-of-abnormal-behavior">Q 3.1.2 What are the key influences comprising the multidimensional model of abnormal behavior?</h5>
+
+<ul>
+<li>To identify the causes of a psychological disorder in a given person we must consider the interaction of all relevant dimensions: genetic contributions, the role of the nervous system, behavioral and cognitive processes, emotional influences, social and interpersonal influences, and developmental factors. Thus, we have arrived at a multidimensional integrative approach to the causes of psychological disorders.</li>
+</ul>
+<h4 class="mume-header" id="32-genetic-contributions-to-psychopathology">3.2 Genetic Contributions to Psychopathology</h4>
+
+<h5 class="mume-header" id="q-321-how-do-genes-interact-with-environmental-factors-to-affect-behavior">Q 3.2.1 How do genes interact with environmental factors to affect behavior?</h5>
+
+<ul>
+<li>The genetic influence on much of our development and most of our behavior, personality, and even IQ score is polygenic - that is, influenced by many genes. This is assumed to be the case in abnormal behavior as well, although research is beginning to identify specific small groups of genes that relate to some major psychological disorders.</li>
+</ul>
+<h5 class="mume-header" id="q-322-what-kinds-of-models-have-been-proposed-to-describe-this-interaction">Q 3.2.2 What kinds of models have been proposed to describe this interaction?</h5>
+
+<ul>
+<li>In studying causal relationships in psychopathology, researchers look at the interactions of genetic and environmental effects. In the diathesis&#x2013;stress model, individuals are assumed to inherit certain vulnerabilities that make them susceptible to a disorder when the right kind of stressor comes along. In the gene&#x2013;environment correlation or reciprocal gene&#x2013;environment model, the individual&#x2019;s genetic vulnerability toward a certain disorder may make it more likely that the person will experience the stressor that, in turn, triggers the genetic vulnerability and thus the disorder. In epigenetics, the immediate effects of the environment (such as early stressful experiences) influence cells that turn certain genes on or off. This effect may be passed down through several generations.</li>
+</ul>
+<h4 class="mume-header" id="33-neuroscience-and-its-contributions-to-psychopathology">3.3 Neuroscience and Its Contributions to Psychopathology</h4>
+
+<h5 class="mume-header" id="q-331-what-are-neurotransmitters-and-how-are-they-involved-in-abnormal-behavior">Q 3.3.1 What are neurotransmitters, and how are they involved in abnormal behavior?</h5>
+
+<ul>
+<li>Within the nervous system, levels of neurotransmitter and neuroendocrine activity interact to modulate and regulate emotions and behavior and contribute to psychological disorders. Of the neurotransmitters that may play a key role, we investigated five: serotonin, gamma-aminobutyric acid (GABA), glutamate, norepinephrine, and dopamine.</li>
+</ul>
+<h5 class="mume-header" id="q-332-what-are-the-functions-of-different-brain-regions-and-what-are-their-roles-in-psychopathology">Q 3.3.2 What are the functions of different brain regions, and what are their roles in psychopathology?</h5>
+
+<ul>
+<li>The brain includes the brain stem, which handles most essential automatic functions, and the forebrain. The hindbrain contains the medulla, pons, and cerebellum; it regulates many automatic activities, such as breath-ing. The midbrain coordinates movement. At the top of the brain stem are the thalamus and hypothalamus, which regulate behavior and emotion. The limbic sys-tem includes the hippocampus, cingulate gyrus, septum, and amygdala, which help regulate our emotions and are involved with the basic drives of sex, aggression, hunger, and thirst. The cerebral cortex allows us to plan, reason, and create.</li>
+</ul>
+<h4 class="mume-header" id="34-behavioral-and-cognitive-science">3.4 Behavioral and Cognitive Science</h4>
+
+<h5 class="mume-header" id="q-341-what-are-the-key-differences-between-behavioral-and-cognitive-explanations-of-the-origins-of-mental-illness">Q 3.4.1 What are the key differences between behavioral and cognitive explanations of the origins of mental illness?</h5>
+
+<ul>
+<li>The field of cognitive science provides a valuable perspective on how behavioral and cognitive influences affect learning and adaptation. Clearly, such influences not only contribute to psychological disorders but also may modify brain functioning, brain structure, and even genetic expression. We examined some research in this field by looking at learned helplessness, modeling, prepared learning, and implicit memory.</li>
+</ul>
+<h4 class="mume-header" id="35-emotions">3.5 Emotions</h4>
+
+<h5 class="mume-header" id="q-351-what-role-do-emotions-play-in-psychopathology">Q 3.5.1 What role do emotions play in psychopathology?</h5>
+
+<ul>
+<li>Emotions have a direct and dramatic impact on our functioning and play a central role in many mental disorders. Mood, a persistent period of emotionality, is often evident in psychological disorders.</li>
+</ul>
+<h4 class="mume-header" id="36-cultural-social-and-interpersonal-factors">3.6 Cultural, Social, and Interpersonal Factors</h4>
+
+<h5 class="mume-header" id="q-361-how-do-cultural-social-and-interpersonal-factors-influence-abnormal-behavior">Q 3.6.1 How do cultural, social, and interpersonal factors influence abnormal behavior?</h5>
+
+<ul>
+<li>Social and interpersonal influences affect both psycho-logical disorders and biology.</li>
+</ul>
+<h4 class="mume-header" id="37-life-span-development">3.7 Life-Span Development</h4>
+
+<h5 class="mume-header" id="q-371-why-should-psychological-disorders-be-considered-from-a-life-span-developmental-perspective">Q 3.7.1 Why should psychological disorders be considered from a life-span developmental perspective?</h5>
+
+<ul>
+<li>In considering a multidimensional integrative approach to psychopathology, it is important to remember the principle of equifinality, which reminds us that we must consider the various paths to a particular outcome, not just the result.</li>
+</ul>
+<p><a href="#book-summary">[BACK TO TOP]</a></p>
+<h3 class="mume-header" id="chapter-10-mood-disorders-and-suicide">Chapter 10: Mood Disorders and Suicide</h3>
+
+<h4 class="mume-header" id="101-understanding-and-defining-mood-disorders">10.1 Understanding and Defining Mood Disorders</h4>
+
+<h5 class="mume-header" id="q-1011-what-is-the-difference-between-a-depressive-episode-and-a-manic-or-hypermanic-episode">Q 10.1.1 What is the difference between a depressive episode and a manic or hypermanic episode?</h5>
+
+<ul>
+<li>Mood disorders are among the most common psychological disorders, and the risk of developing them is increasing worldwide, particularly in younger people.</li>
+<li>Two fundamental experiences can contribute either singly or in combination to all specific mood disorders: a major depressive episode and mania. A less severe episode of mania that does not cause impairment in social or occupational functioning is known as a hypomanic episode. An episode of mania coupled with anxiety or depression is known as a mixed episode or mixed state.</li>
+<li>An individual who suffers from episodes of depression only is said to have a unipolar disorder. An individual who alternates between depression and mania has a bipolar disorder.</li>
+</ul>
+<h5 class="mume-header" id="q-1012-what-are-the-clinical-symptoms-of-major-depressive-disorder-persistent-depressive-disorder-and-bipolar-disorder">Q 10.1.2 What are the clinical symptoms of major depressive disorder, persistent depressive disorder, and bipolar disorder?</h5>
+
+<ul>
+<li>Major depressive disorder may be a single episode or recurrent, but it is always time-limited; in another form of depression, persistent depressive disorder (dysthymia), the symptoms are often somewhat milder but remain relatively unchanged over long periods. In some cases, fewer symptoms are observed than in a major depressive episode, but they persist for at least two years (persistent depressive disorder) (dysthymia); in other cases, a major depressive episode will last at least two years (chronic major depressive episode). In cases of double depression, a form of persistent depressive disorder, an individual experiences both major depressive episodes and persistent depressive disorder (dysthymia).</li>
+<li>Approximately 20% of bereaved individuals may experience a complicated grief reaction in which the normal grief response develops into a full-blown mood disorder.</li>
+<li>The key identifying feature of bipolar disorders is an alternation of manic episodes and major depressive episodes. Cyclothymic disorder is a milder but more chronic version of bipolar disorder.</li>
+<li>Patterns of additional features that sometimes accompany mood disorders, called specifiers, may predict the course or patient response to treatment, as does the temporal patterning or course of mood disorders. One pattern, seasonal affective disorder, most often occurs in winter.</li>
+</ul>
+<h4 class="mume-header" id="102-prevalence-of-mood-disorders">10.2 Prevalence of Mood Disorders</h4>
+
+<h5 class="mume-header" id="q-1021-how-does-the-prevalence-of-mood-disorders-vary-across-a-life-span">Q 10.2.1 How does the prevalence of mood disorders vary across a life span?</h5>
+
+<ul>
+<li>Mood disorders in children are fundamentally similar to mood disorders in adults.</li>
+<li>Symptoms of depression are increasing dramatically in our elderly population.</li>
+<li>The experience of anxiety across cultures varies, and it can be difficult to make comparisons&#x2014;especially, for example, when we attempt to compare subjective feelings of depression.</li>
+</ul>
+<h4 class="mume-header" id="103-causes-of-mood-disorders">10.3 Causes of Mood Disorders</h4>
+
+<h5 class="mume-header" id="q-1031-what-biological-psychological-and-sociocultural-factors-contribute-to-the-development-of-mood-disorders">Q 10.3.1 What biological, psychological, and sociocultural factors contribute to the development of mood disorders?</h5>
+
+<ul>
+<li>The causes of mood disorders lie in a complex interaction of biological, psychological, and social factors. From a biological perspective, researchers are particularly interested in the stress hypothesis and the role of neuro-hormones. Psychological theories of depression focus on learned helplessness and the depressive cognitive schemas, as well as interpersonal disruptions.</li>
+</ul>
+<h4 class="mume-header" id="104-treatment-of-mood-disorders">10.4 Treatment of Mood Disorders</h4>
+
+<h5 class="mume-header" id="q-1041-what-medical-and-psychological-treatments-have-been-successful-in-treating-mood-disorders">Q 10.4.1 What medical and psychological treatments have been successful in treating mood disorders?</h5>
+
+<ul>
+<li>A variety of treatments, both biological and psychological, have proved effective for the mood disorders, at least in the short term. For those individuals who do not respond to antidepressant drugs or psychosocial treatments, a more dramatic physical treatment, electroconvulsive therapy, is sometimes used. Two psychological treatments&#x2014;cognitive therapy and interpersonal psycho-therapy&#x2014;seem effective in treating depressive disorders.</li>
+<li>Relapse and recurrence of mood disorders are common in the long term, and treatment efforts must focus on maintenance treatment, that is, on preventing relapse or recurrence.</li>
+</ul>
+<h4 class="mume-header" id="105-suicide">10.5 Suicide</h4>
+
+<h5 class="mume-header" id="q-1051-what-is-the-relationship-between-suicide-and-mood-disorders">Q 10.5.1 What is the relationship between suicide and mood disorders?</h5>
+
+<ul>
+<li>Suicide is often associated with mood disorders but can occur in their absence or in the presence of other disorders. It is the 10th leading cause of death among all people in the United States, but among adolescents, it is the 3rd leading cause of death.</li>
+<li>In understanding suicidal behavior, three indices are important: suicidal ideation (serious thoughts about committing suicide), suicidal plans (a detailed method for killing oneself), and suicidal attempts (that are not successful). Important, too, in learning about risk factors for suicides is the psychological autopsy, in which the psychological profile of an individual who has committed suicide is reconstructed and examined for clues.</li>
+</ul>
+<p><a href="#book-summary">[BACK TO TOP]</a></p>
+<h3 class="mume-header" id="chapter-11-anxiety-trauma-and-stressor-related-and-obsessive-compulsive-and-related-disorders">Chapter 11: Anxiety, Trauma-and Stressor-Related, and Obsessive-Compulsive and Related Disorders</h3>
+
+<h4 class="mume-header" id="111-the-complexity-of-anxiety-disorders">11.1 The Complexity of Anxiety Disorders</h4>
+
+<h5 class="mume-header" id="q-1111-what-are-the-similarities-and-differences-among-anxiety-fear-and-panic-attacks">Q 11.1.1 What are the similarities and differences among anxiety, fear, and panic attacks?</h5>
+
+<ul>
+<li>Anxiety is a future-oriented state characterized by negative affect in which a person focuses on the possibility of uncontrollable danger or misfortune; in contrast, fear is a present-oriented state characterized by strong escapist tendencies and a surge in the sympathetic branch of the autonomic nervous system in response to current danger.</li>
+<li>A panic attack represents the alarm response of real fear, but there is no actual danger.</li>
+<li>Panic attacks may be (1) unexpected (without warning), or (2) expected (always occurring in a specific situation).</li>
+</ul>
+<h4 class="mume-header" id="anxiety-disorders">ANXIETY DISORDERS</h4>
+
+<h4 class="mume-header" id="112-generalized-anxiety-disorder">11.2 Generalized Anxiety Disorder</h4>
+
+<h5 class="mume-header" id="q-1121-what-are-the-essential-features-possible-causes-and-available-treatment-approaches-for-generalized-anxiety-disorder">Q 11.2.1 What are the essential features, possible causes, and available treatment approaches for generalized anxiety disorder?</h5>
+
+<ul>
+<li>In generalized anxiety disorder (GAD), anxiety focuses on minor, everyday events and not on one major worry or concern.</li>
+<li>Both genetic and psychological vulnerabilities seem to contribute to the development of GAD.</li>
+<li>Although drug and psychological treatments may be effective in the short term, drug treatments are no more effective in the long term than placebo treatments. Successful treatment may help individuals with GAD focus on what is really threatening to them in their lives.</li>
+</ul>
+<h4 class="mume-header" id="113-panic-disorder-and-agoraphobia">11.3 Panic Disorder and Agoraphobia</h4>
+
+<h5 class="mume-header" id="q-1131-what-are-the-essential-features-of-panic-disorder-and-agoraphobia">Q 11.3.1 What are the essential features of panic disorder and agoraphobia?</h5>
+
+<ul>
+<li>In panic disorder, which may or may not be accompanied by agoraphobia (a fear and avoidance of situations considered to be &#x201C;unsafe&#x201D;), anxiety is focused on the next panic attack. For some people, agoraphobia develops in the absence of panic attacks or panic-like symptoms.</li>
+<li>We all have some genetic vulnerability to stress, and many of us have had a neurobiological overreaction to some stressful event&#x2014;that is, a panic attack. Individuals who develop panic disorder and then develop anxiety over the possibility of having another panic attack.</li>
+<li>Both drug and psychological treatments have proved successful in the treatment of panic disorder. One psychological method, panic control treatment, concentrates on exposing patients to clusters of sensations that remind them of their panic attacks. For agoraphobia, therapeutically-supervised exposure to feared situations is most effective.</li>
+</ul>
+<h4 class="mume-header" id="114-specific-phobia">11.4 Specific Phobia</h4>
+
+<h5 class="mume-header" id="q-1141-what-are-the-principal-causes-of-specific-phobia">Q 11.4.1 What are the principal causes of specific phobia?</h5>
+
+<ul>
+<li>In phobic disorders, the individual avoids situations that produce severe anxiety, panic, or both. In specific phobia, the fear is focused on a particular object or situation.</li>
+<li>Phobias can be acquired by experiencing some traumatic event; they can also be learned vicariously or even be taught.</li>
+</ul>
+<h5 class="mume-header" id="q-1142-what-strategies-are-typically-used-to-treat-specific-phobia">Q 11.4.2 What strategies are typically used to treat specific phobia?</h5>
+
+<ul>
+<li>Treatment of phobias is rather straightforward, with a focus on structured and consistent exposure-based exercises.</li>
+</ul>
+<h4 class="mume-header" id="115-social-anxiety-disorder-social-phobia">11.5 Social Anxiety Disorder (Social Phobia)</h4>
+
+<h5 class="mume-header" id="q-1151-what-are-the-principal-causes-of-social-anxiety-disorder-social-phobia">Q 11.5.1 What are the principal causes of social anxiety disorder (social phobia)?</h5>
+
+<ul>
+<li>Social anxiety disorder is a fear of being around others, particularly in situations that call for some kind of &#x201C;performance&#x201D; in front of other people.</li>
+</ul>
+<h5 class="mume-header" id="q-1152-what-strategies-are-used-to-treat-social-anxiety-disorder-social-phobia">Q 11.5.2 What strategies are used to treat social anxiety disorder (social phobia)?</h5>
+
+<ul>
+<li>Although the causes of social anxiety disorder are similar to those of specific phobias, treatment has a different focus that includes rehearsing or role-playing socially phobic situations. In addition, drug treatments have been effective.</li>
+</ul>
+<h4 class="mume-header" id="trauma-and-stressor-related-disorders">TRAUMA-AND STRESSOR-RELATED DISORDERS</h4>
+
+<h4 class="mume-header" id="116-posttraumatic-stress-disorder">11.6 Posttraumatic Stress Disorder</h4>
+
+<h5 class="mume-header" id="q-1161-what-are-the-essential-features-and-possible-causes-of-posttraumatic-stress-disorder">Q 11.6.1 What are the essential features and possible causes of posttraumatic stress disorder?</h5>
+
+<ul>
+<li>Posttraumatic stress disorder (PTSD) focuses on avoiding thoughts or images of past traumatic experiences.</li>
+<li>The precipitating cause of PTSD is obvious&#x2014;a traumatic experience. But mere exposure to trauma is not enough. The intensity of the experience seems to be a factor in whether an individual develops PTSD; biological vulnerabilities, as well as social and cultural factors, appear to play a role as well.</li>
+</ul>
+<h5 class="mume-header" id="q-1162-what-treatment-approaches-are-available-for-posttraumatic-stress-disorder">Q 11.6.2 What treatment approaches are available for posttraumatic stress disorder?</h5>
+
+<ul>
+<li>Treatment involves re-exposing the victim to the trauma and re-establishing a sense of safety to overcome the debilitating effects of PTSD.</li>
+</ul>
+<h4 class="mume-header" id="117-other-trauma-and-stressor-related-disorders">11.7 Other Trauma-and Stressor-Related Disorders</h4>
+
+<h5 class="mume-header" id="q-1171-what-are-the-origins-of-other-trauma-and-stress-related-disorders">Q 11.7.1 What are the origins of other trauma-and stress-related disorders?</h5>
+
+<ul>
+<li>Adjustment disorder is the development of anxiety or depression in response to stressful, but not traumatic, life events. Individuals prone to anxiety or depression generally may experience increases during stressful life events.</li>
+<li>Children experiencing inadequate, abusive, or absent caregiving in early childhood fail to develop normal attachment relationships with caregivers, resulting in two different disorders.</li>
+<li>Reactive attachment disorder describes children who are inhibited and emotionally withdrawn and unable to form attachment with caregivers.</li>
+<li>Disinhibited social engagement disorder describes children who inappropriately approach all strangers, behaving as if they had always had strong loving relationships with them.</li>
+</ul>
+<h4 class="mume-header" id="obsessive-compulsive-and-related-disorders">OBSESSIVE-COMPULSIVE AND RELATED DISORDERS</h4>
+
+<h4 class="mume-header" id="118-obsessive-compulsive-disorder">11.8 Obsessive-Compulsive Disorder</h4>
+
+<h5 class="mume-header" id="q-1181-what-are-the-symptoms-of-obsessive-compulsive-disorder">Q 11.8.1 What are the symptoms of obsessive-compulsive disorder?</h5>
+
+<ul>
+<li>Obsessive-compulsive disorder (OCD) focuses on avoiding frightening or repulsive intrusive thoughts (obsessions) or neutralizing these thoughts through the use of ritualistic behavior (compulsions).</li>
+<li>As with all anxiety disorders, biological and psychological vulnerabilities seem to be involved in the development of OCD.</li>
+</ul>
+<h5 class="mume-header" id="q-1182-how-is-obsessive-compulsive-disorder-treated">Q 11.8.2 How is obsessive-compulsive disorder treated?</h5>
+
+<ul>
+<li>Drug treatment seems to be only modestly successful in treating OCD. The most effective treatment approach is a psychological treatment called exposure and ritual prevention (ERP).</li>
+</ul>
+<h4 class="mume-header" id="119-body-dysmorphic-disorder">11.9 Body Dysmorphic Disorder</h4>
+
+<h5 class="mume-header" id="q-1191-what-are-the-features-of-body-dysmorphic-disorder-and-how-is-it-treated">Q 11.9.1 What are the features of body dysmorphic disorder and how is it treated?</h5>
+
+<ul>
+<li>In body dysmorphic disorder (BDD), a person who looks normal is obsessively preoccupied with some imagined defect in appearance (imagined ugliness). These patients typically have more insight into their problem and may seek out plastic surgery as a remedy. Psychological treatment approaches are also similar to those for OCD and are approximately equally successful.</li>
+</ul>
+<h4 class="mume-header" id="1110-other-obsessive-compulsive-and-related-disorders">11.10 Other Obsessive-Compulsive and Related Disorders</h4>
+
+<h5 class="mume-header" id="q-11101-what-are-the-other-obsessive-compulsive-and-related-disorders-and-how-are-they-treated">Q 11.10.1 What are the other obsessive-compulsive and related disorders and how are they treated?</h5>
+
+<ul>
+<li>Hoarding disorder is characterized by excessive acquisition of things, difficulty discarding anything, and living with excessive clutter under conditions best characterized as gross disorganization.</li>
+<li>Treatment approaches are similar to those for OCD but are less successful.</li>
+<li>Repetitive and compulsive hair pulling, resulting in a significant noticeable loss of hair or repetitive and compulsive picking of the skin, leading to tissue damage, characterize trichotillomania and excoriation disorders respectively.</li>
+</ul>
+<p><a href="#book-summary">[BACK TO TOP]</a></p>
+<h3 class="mume-header" id="chapter-12-substance-related-addictive-and-impulse-control-disorders">Chapter 12: Substance-Related, Addictive, and Impulse-Control Disorders</h3>
+
+<h4 class="mume-header" id="121-perspectives-on-substance-related-and-addictive-disorders">12.1 Perspectives on Substance-Related and Addictive Disorders</h4>
+
+<h5 class="mume-header" id="q-1211-what-are-substance-related-and-addictive-disorders">Q 12.1.1 What are substance-related and addictive disorders?</h5>
+
+<ul>
+<li>In DSM-5, substance-related and addictive disorders include problems with the use of depressants (alcohol, barbiturates, and benzodiazepines), stimulants (amphetamines, cocaine, nicotine, and caffeine), opiates (heroin, codeine, and morphine), and hallucinogens (cannabis and LSD) as well as gambling.</li>
+</ul>
+<h4 class="mume-header" id="122-depressants-stimulants-and-opioids">12.2 Depressants, Stimulants, and Opioids</h4>
+
+<h5 class="mume-header" id="q-1221-what-are-the-physiological-and-psychological-effects-of-depressants">Q 12.2.1 What are the physiological and psychological effects of depressants?</h5>
+
+<ul>
+<li>Depressants are a group of drugs that decrease central nervous system activity. The primary effect is to reduce our levels of physiological arousal and help us relax. Included in this group are alcohol and sedative, hypnotic, and anxiolytic drugs, such as those prescribed for insomnia.</li>
+</ul>
+<h5 class="mume-header" id="q-1222-what-are-the-physiological-and-psychological-effects-of-stimulants">Q 12.2.2 What are the physiological and psychological effects of stimulants?</h5>
+
+<ul>
+<li>Stimulants, the most commonly consumed psychoactive drugs, include caffeine (in coffee, chocolate, and many soft drinks), nicotine (in tobacco products such as cigarettes), amphetamines, and cocaine. In contrast to the depressant drugs, stimulants make us more alert and energetic.</li>
+</ul>
+<h5 class="mume-header" id="q-1223-what-are-the-physiological-and-psychological-effects-of-opiates">Q 12.2.3 What are the physiological and psychological effects of opiates</h5>
+
+<ul>
+<li>Opiates include opium, morphine, codeine, and heroin; they have a narcotic effect&#x2014;relieving pain and inducing sleep. The broader term opioids are used to refer to the family of substances that includes these opiates and synthetic variations created by chemists (e.g., methadone) and the similarly acting substances that occur naturally in our brains (enkephalins, beta-endorphins, and dynorphins).</li>
+</ul>
+<h4 class="mume-header" id="123-cannabis-related-disorders">12.3 Cannabis-Related Disorders</h4>
+
+<h5 class="mume-header" id="q-1231-what-are-the-physiological-and-psychological-effects-of-cannabis">Q 12.3.1 What are the physiological and psychological effects of cannabis?</h5>
+
+<ul>
+<li><strong>Cannabis (marijuana)</strong> is the most routinely used illegal substance, with 5%&#x2013;15% of people in western countries reporting regular use. Perhaps more than any other drug, however, cannabis can produce different reactions in people, including a sense of well-being, mood swings, and paranoia.</li>
+</ul>
+<h4 class="mume-header" id="124-hallucinogen-related-disorders">12.4 Hallucinogen-Related Disorders</h4>
+
+<h5 class="mume-header" id="q-1241-what-are-the-physiological-and-psychological-effects-of-hallucinogenics">Q 12.4.1 What are the physiological and psychological effects of hallucinogenics?</h5>
+
+<ul>
+<li>Hallucinogens essentially change the way the user perceives the world. Sight, sound, feelings, and even smell are distorted, sometimes in dramatic ways, in a person under the influence of drugs such as cannabis and LSD.</li>
+</ul>
+<h4 class="mume-header" id="125-other-drugs-of-abuse">12.5 Other Drugs of Abuse</h4>
+
+<h5 class="mume-header" id="q-1251-what-are-the-physiological-and-psychological-effects-of-other-drugs-including-inhalants-steroids-and-designer-drugs">Q 12.5.1 What are the physiological and psychological effects of other drugs, including inhalants, steroids, and designer drugs?</h5>
+
+<ul>
+<li>A number of other substances are used by individuals to alter sensory experiences. The high associated with the use of inhalants resembles that of alcohol intoxication and usually includes dizziness, slurred speech, incoordination, euphoria, and lethargy. Steroid use differs from other drug use because the substance does not produce a desirable high but instead is used to enhance performance and body size. Designer drugs heighten a person&#x2019;s auditory and visual perception, as well as the senses of taste and touch.</li>
+</ul>
+<h4 class="mume-header" id="126-causes-and-treatment-of-substance-related-disorders">12.6 Causes and Treatment of Substance-Related Disorders</h4>
+
+<h5 class="mume-header" id="q-1261-what-physiological-and-psychological-processes-lead-to-substance-dependence">Q 12.6.1 What physiological and psychological processes lead to substance dependence?</h5>
+
+<ul>
+<li>Most psychotropic drugs seem to produce positive effects by acting directly or indirectly on the dopaminergic mesolimbic system (the pleasure pathway). In addition, psychosocial factors such as expectations, stress, and cultural practices interact with the biological factors to influence drug use.</li>
+</ul>
+<h5 class="mume-header" id="q-1262-what-psychological-and-medical-treatments-are-available-for-substance-related-disorders">Q 12.6.2 What psychological and medical treatments are available for substance-related disorders?</h5>
+
+<ul>
+<li>Substance dependence is treated successfully only in a minority of those affected, and the best results reflect the motivation of the drug user and a combination of biological and psychosocial treatments.</li>
+<li>Programs aimed at preventing drug use may have the greatest chance of significantly affecting the drug problem.</li>
+</ul>
+<h4 class="mume-header" id="127-gambling-disorder">12.7 Gambling Disorder</h4>
+
+<h5 class="mume-header" id="q-1271-what-psychological-and-physiological-processes-lead-to-gambling-disorder">Q 12.7.1 What psychological and physiological processes lead to gambling disorder?</h5>
+
+<ul>
+<li>Problem gamblers display the same types of cravings and dependence as persons who have substance-related disorders.</li>
+<li>Similar brain systems appear to be involved with those addicted to gambling as seen in persons with sub-stance-related disorders.</li>
+</ul>
+<h4 class="mume-header" id="128-impulse-control-disorders">12.8 Impulse-Control Disorders</h4>
+
+<h5 class="mume-header" id="q-1281-what-conditions-are-listed-in-dsm-5-as-impulse-control-disorders">Q 12.8.1 What conditions are listed in DSM-5 as impulse-control disorders?</h5>
+
+<ul>
+<li>In DSM-5, impulse-control disorders include three separate disorders: intermittent explosive disorder, kleptomania, and pyromania.</li>
+</ul>
+<p><a href="#book-summary">[BACK TO TOP]</a></p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
